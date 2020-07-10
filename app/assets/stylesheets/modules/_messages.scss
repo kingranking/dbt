@@ -40,7 +40,8 @@
 }
 
 .Close__icon {
-  color: red;
+  color: #e5171f;
+  font-size: 25px;
 }
 
 .Content {
@@ -57,6 +58,8 @@
   &__bar {
     color: rgba(0,0,0,0.5);
     padding: 0 5px;
+    border-radius: 5px;
+    border-style: none;
   }
   &__icon {
     color: rgba(0,0,0,0.5);
@@ -79,7 +82,8 @@
   height: 80px;
   background-color: #ffffff;
   margin: 30px 0; 
-  border-radius: 10px;
+  border-radius: 15px;
+  border: 6px solid #333;
   a {
     position: absolute;
     top: 0;
@@ -95,7 +99,7 @@
 }
 
 .Subject:hover {
-  border: 5px solid #ffa500;
+  border: 6px solid #009944;
 }
 
 .Main {
@@ -110,14 +114,14 @@
   padding: 30px 50px;
   &__title {
     width: 100%;
-    background-color:white;
+    background-color:#fff;
     color: rgba(0,0,0,0.9);
     font-family: "ぼくたちのゴシック";
     font-size: 30px;
     font-weight: bold;
     line-height: 90px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
     position: relative;
     z-index: 1;
   }
@@ -138,6 +142,10 @@
   width: 100%;
   padding: 10px;
   overflow: scroll;
+  font-family: "ぼくたちのゴシック";
+  background-color: aliceblue;
+  background-image: url('https://cdn2.vectorstock.com/i/1000x1000/49/16/debate-two-speakers-political-speeches-debates-vector-3414916.jpg');
+  background-size: cover;
 }
 
 .MessageBox {
@@ -148,10 +156,11 @@
 
 .MessageFor {
   height: 100%;
-  width: 48%;
+  width: 49%;
   margin-right: auto;
-  background-color: royalblue;
-  border-radius: 20px;
+  background-color: aliceblue;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  border: 6px solid #077385;
   padding: 10px 15px;
   justify-content: space-between;
   position: relative;
@@ -159,10 +168,11 @@
 
 .MessageAgainst {
   height: 100%;
-  width: 48%;
+  width: 49%;
   margin-left: auto;
-  background-color: tomato;
-  border-radius: 20px;
+  background-color: mistyrose;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  border: 6px solid #c2505c;
   padding: 10px 15px;
   justify-content: space-between;
   position: relative;
@@ -170,6 +180,7 @@
 
 .MessageText {
   font-size: 16px;
+  
 }
 
 .MessageUser {
