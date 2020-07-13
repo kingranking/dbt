@@ -4,54 +4,23 @@
       %h3.LeftHeader__userName
         = current_user.name
       %ul.LeftHeader__iconList
+        - if current_user.admin?
+          %li.LeftHeader__Icon
+            = link_to new_group_path do
+              = icon('fas', 'plus', class: 'Close__icon')
         %li.LeftHeader__Icon
           = link_to edit_user_path(current_user) do
-            = icon('fas', 'user-cog')
-        %li.LeftHeader__Icon
-          = link_to '#' do
-            = icon('far', 'window-close', class: 'Close__icon')
+            = icon('fas', 'user-cog')    
   .Content
     .Search
       %input.Search__bar{type: 'text', placeholder: '検索'}
         = icon('fas', 'search', class: 'Search__icon')
     .Subjects
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            日本はサマータイム制を導入すべし。是か非か
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            タバコは人体に有害である？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            小学校英語教育は効果があるかどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            学校にスマートフォンを持ってきて良いかどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            男性専用車両は今後作る必要があるかどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            タバコの値段を1,000円にすべきかどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            民泊の法規制強化は必要かどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            超能力はこの世に存在するものかどうか？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            邪馬台国は九州に存在していた説は本当か？
-      .Subject
-        = link_to '#' do
-          .Subject__name
-            学校生活に制服は必要かどうか？
+      - groups.each do |group|
+        .Subject
+          = link_to '' do
+            = group.name
+
+          
+            
+      

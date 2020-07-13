@@ -28,11 +28,11 @@
     font-weight: bold;
   }
   &__iconList {
-    font-size: 20px;
     display: flex;
   }
   &__Icon {
     margin-left: 15px;
+    font-size: 20px;
     a {
       color: white;
     }
@@ -58,7 +58,7 @@
   &__bar {
     color: rgba(0,0,0,0.5);
     padding: 0 5px;
-    border-radius: 5px;
+    border-radius: 7px;
     border-style: none;
   }
   &__icon {
@@ -76,25 +76,17 @@
   padding: 0 20px;
 }
 
-.Subject {
-  position: relative;
+.Subject { 
   box-sizing: border-box;
-  height: 80px;
+  width: 100%;
   background-color: #ffffff;
   margin: 30px 0; 
-  border-radius: 15px;
+  border-radius: 25px;
   border: 6px solid #333;
+  padding: 20px;
   a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-  }
-  &__name {
-    margin: 10px;
     color:rgba(0,0,0,0.9);
+    text-decoration: none;
   }
 }
 
@@ -144,7 +136,7 @@
   overflow: scroll;
   font-family: "ぼくたちのゴシック";
   background-color: aliceblue;
-  background-image: url('https://cdn2.vectorstock.com/i/1000x1000/49/16/debate-two-speakers-political-speeches-debates-vector-3414916.jpg');
+  background-image: url('debate.jpg');
   background-size: cover;
 }
 
