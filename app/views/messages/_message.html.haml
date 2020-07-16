@@ -1,0 +1,8 @@
+.MessageBox
+  .MessageFor
+    .MessageText
+      - if message.content.present?
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
+    .MessageUser
+      = message.user.name

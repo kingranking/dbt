@@ -1,0 +1,2 @@
+class Against < ApplicationRecord
+end

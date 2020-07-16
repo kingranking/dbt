@@ -1,0 +1,2 @@
+class ForsController < ApplicationController
+end

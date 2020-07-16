@@ -2,15 +2,15 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title 近日公開
+    %title ぼく偉いもん
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %link{ href: 'https://fonts.googleapis.com/earlyaccess/hannari.css', rel: 'stylesheet' }
   %body
-    %p.notice
-      = notice
-    %p.alert
-      = alert
+    -#%p.notice
+      -#= notice
+    -#%p.alert
+      -#= alert
     = yield

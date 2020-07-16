@@ -1,0 +1,2 @@
+class AgainstsController < ApplicationController
+end

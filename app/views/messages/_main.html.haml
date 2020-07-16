@@ -3,61 +3,14 @@
     .RightHeader__icon
       = icon('fas', 'bars', class: 'Bar__icon')
     .RightHeader__title
-      = group.name
+      = @group.name
   .MessageField
-    .MessageBox
-      .MessageFor
-        .MessageText
-          ピカチュウ
-        .MessageUser
-          サトシ
-    .MessageBox
-      .MessageAgainst
-        .MessageText
-          ジュカイン
-        .MessageUser
-          ショータ
-    .MessageBox
-      .MessageFor
-        .MessageText
-          ゲッコウガ
-        .MessageUser
-          サトシ
-    .MessageBox
-      .MessageAgainst
-        .MessageText
-          ボーマンダ
-        .MessageUser
-          ショータ
-    .MessageBox
-      .MessageFor
-        .MessageText
-          ファイアロー
-        .MessageUser
-          サトシ
-    .MessageBox
-      .MessageAgainst
-        .MessageText
-          ギルガルド
-        .MessageUser
-          ショータ
-    .MessageBox
-      .MessageFor
-        .MessageText
-          ヌメルゴン
-        .MessageUser
-          サトシ
-    .MessageBox
-      .MessageAgainst
-        .MessageText
-          ケッキング
-        .MessageUser
-          ショータ
+    = render @messages
   .Footer
-    = form_with url: "#", html: {class: "Form"}, local: true do |f|
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        = f.text_area(:contents, type: 'text', class: "Form__inputContent", placeholder: 'メッセージ')
-        = f.label :document, class: 'Form__inputDocument' do
+        = f.text_area :content, type: 'text', class: "Form__inputContent", placeholder: 'メッセージ'
+        = f.label :image, class: 'Form__inputDocument' do
           = icon('fas', 'file-alt', class: 'Form__icon')
-          = f.file_field :document, class: 'Hidden'
+          = f.file_field :image, class: 'Hidden'
         = f.submit 'SEND', class: 'Form__submit'
