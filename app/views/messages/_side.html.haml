@@ -1,6 +1,16 @@
 .Side
   .LeftHeader
     .LeftHeader__List
+      -unless current_user.admin?
+        -if For.exists?(user_id: current_user.id, group_id: @group)
+          .LeftHeader__userIcon
+            %img{ src: current_user.image, class: "Icon-imageFor" }
+        - elsif Against.exists?(user_id: current_user.id, group_id: @group)
+          .LeftHeader__userIcon
+            %img{ src: current_user.image, class: "Icon-imageAgainst" }
+        - else
+          .LeftHeader__userIcon
+            %img{ src: current_user.image, class: "Icon-imageNeutral" }
       %h3.LeftHeader__userName
         = current_user.name
       %ul.LeftHeader__iconList
@@ -18,9 +28,8 @@
     .Subjects
       - groups.each do |group|
         .Subject
-          = link_to group_messages_path(group) do
+          = link_to group_path(group) do
             = group.name
-
           
             
       

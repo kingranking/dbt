@@ -1,11 +1,9 @@
 .Main
   .RightHeader
-    .RightHeader__icon
-      = icon('fas', 'bars', class: 'Bar__icon')
     .RightHeader__title
       = @group.name
   .MessageField
-    = render @messages
+    = render 'message'
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents

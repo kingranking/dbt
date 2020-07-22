@@ -1,8 +1,32 @@
-.MessageBox
-  .MessageFor
-    .MessageText
-      - if message.content.present?
-        = message.content
-    = image_tag message.image.url, class: 'Message__image' if message.image.present?
-    .MessageUser
-      = message.user.name
+- @messages.each do |message|  
+  -@user = User.find(message.user_id)
+  - if message.user_id == 5
+    .MessageBox
+      .MessageBox__middle
+        .MessageNeutral
+          - if message.content.present?
+            %p.MessageText= message.content
+          = image_tag message.image.url, class: 'Message__image' if message.image.present?
+  - elsif message.truth == true
+    .MessageBox
+      .MessageBox__left
+        .MessageFors
+          .MessageIcon-for
+            %img{ src: @user.image, class: "Icon-imageFor" }
+            = message.user.name
+          .MessageFor
+            - if message.content.present?
+              %p.MessageText= message.content
+            = image_tag message.image.url, class: 'Message__image' if message.image.present?
+  - else
+    .MessageBox
+      .MessageBox__right  
+        .MessageAgainsts
+          .MessageAgainst
+            - if message.content.present?
+              %p.MessageText= message.content
+            = image_tag message.image.url, class: 'Message__image' if message.image.present?
+          .MessageIcon-against
+            %img{ src: @user.image, class: "Icon-imageAgainst" }
+            = message.user.name
+        

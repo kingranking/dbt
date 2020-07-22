@@ -2,12 +2,13 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:rel => 'icon', :type => 'image/x-icon', :href => '演説.jpg'}/
     %title ぼく偉いもん
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{ href: 'https://fonts.googleapis.com/earlyaccess/hannari.css', rel: 'stylesheet' }
+    %link{ href: 'https://fonts.googleapis.com/earlyaccess/hannari.css', rel: 'stylesheet' }      
   %body
     -#%p.notice
       -#= notice

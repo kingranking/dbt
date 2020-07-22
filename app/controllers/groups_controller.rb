@@ -21,6 +21,15 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def show
+    @group = Group.find(params[:id])
+    if For.exists?(group_id: @group, user_id: current_user.id) || Against.exists?(group_id: @group, user_id: current_user.id)
+      redirect_to group_messages_path(@group)
+    else
+
+    end
+  end
+
   def update
     @group = Group.find(params[:id])
     if @group.save
@@ -33,7 +42,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :detail)
   end
 
 end

@@ -1,0 +1,15 @@
+.DebateShow
+  .DebateContents
+    .DebateTitle
+      = @group.name
+    .DebateDetail
+      .DebateDetail__title
+        詳細
+      .DebateDetail__content
+        = @group.detail
+    .Button2
+      = button_to group_fors_path(@group), class: "For2" do
+        賛成
+      = button_to group_againsts_path(@group), class: "Against2" do
+        反対
+

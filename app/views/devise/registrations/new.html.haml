@@ -15,6 +15,11 @@
           = f.text_field :name, autofocus: true
       .FormField
         .FormField__label--normal
+          = f.label :アイコン
+        .FormField__input--normal
+          = f.file_field :image, autofocus: true
+      .FormField
+        .FormField__label--normal
           = f.label :メールアドレス
         .FormField__input--normal
           = f.email_field :email

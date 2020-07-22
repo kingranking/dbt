@@ -10,6 +10,10 @@
       = f.label :name, "論題名", class: 'SettingGroupForm__label'
     .SettingGroupForm__rightField
       = f.text_field :name, class: 'SettingGroupForm__input', placeholder: "論題名"
+    .SettingGroupForm__leftField
+      = f.label :detail, "詳細", type: 'text', class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      = f.text_area :detail, class: 'SettingGroupForm__input', placeholder: "詳細"
   .SettingGroupForm__field
     .SettingGroupForm__leftField
     .SettingGroupForm__rightField
