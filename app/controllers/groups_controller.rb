@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group = Group.where(id: '1')
   end
 
   def new

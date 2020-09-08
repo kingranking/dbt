@@ -1,14 +1,56 @@
-.Main
+.Main 
   .RightHeader
-    .RightHeader__title
-      = @group.name
+    .RightHeader__content
+      .RightHeader__name
+        - if For.exists?(user_id: current_user.id, group_id: @group)
+          %p.f-marker
+            ●
+        - elsif Against.exists?(user_id: current_user.id, group_id: @group)
+          %p.a-marker
+            ●
+        - else
+        = @group.name
+      .RightHeader__info
+        .RightHeader__data
+          = icon('fas', 'user')
+          = For.where(group_id: @group.id).count + Against.where(group_id: @group.id).count
+        .RightHeader__data__for
+          = icon('fas', 'user')
+          = For.where(group_id: @group.id).count
+        .RightHeader__data__against
+          = icon('fas', 'user')
+          = Against.where(group_id: @group.id).count
+        .RightHeader__ratio
+          .For__ratio
+            50%
+          .Against__ratio
+            50%
+    .RightHeader__icons
+      .RightHeader__icon
+        = icon('fas', 'info-circle')
+      .RightHeader__icon
+        = link_to edit_group_path(@group) do
+          = icon('fas', 'cog') 
   .MessageField
     = render 'message'
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        = f.text_area :content, type: 'text', class: "Form__inputContent", placeholder: 'メッセージ'
-        = f.label :image, class: 'Form__inputDocument' do
-          = icon('fas', 'file-alt', class: 'Form__icon')
-          = f.file_field :image, class: 'Hidden'
-        = f.submit 'SEND', class: 'Form__submit'
+        .Form__input
+          = f.text_area :content, type: 'text', class: "Form__input", placeholder: 'メッセージ' 
+        .Form__content
+          .Form__icons
+            .Form__icon
+              = f.label :image do
+                = icon('fas', 'file-alt')
+                = f.file_field :image, class: 'Hidden'
+            .Form__icon
+              = icon('fas', 'bold')
+            .Form__icon
+              = icon('fas', 'list-ul')
+            .Form__icon
+              = icon('fas', 'list-ol')
+          = button_tag type: 'submit', class: 'Send' do
+            = icon('fas', 'paper-plane')
+            
+            

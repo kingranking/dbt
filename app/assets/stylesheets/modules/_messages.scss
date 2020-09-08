@@ -6,97 +6,141 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-image: url('debate.jpg');
-  background-size: cover;
+  background-color: #fff;
 }
 
 .Side {
   width: 300px;
-  color: #ffffff;
-  font-family: "ぼくたちのゴシック";
+  color: #000;
+  border-right: 1px solid #fff;
 }
 
 .LeftHeader {
-  height: 150px;
-  background-color: rgba(0,0,0,0.9);
-  padding: 0 20px;
-  &__List {
+  height: 75px;
+  background-color: #333;
+  color: #fff;
+  padding: 0 20px 0 10px;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  line-height: 75px;
+  &__user {
     display: flex;
-    line-height: 150px;
-    justify-content: space-between;
   }
   &__userIcon {
-    margin-top: 20px; 
+    margin-top: 12px;
   }
-  &__userName {
-    font-size: 30px;
-    font-weight: bold;
+  &__userName { 
+    font-size: 20px;
+    margin-left: 20px;
   }
-  &__iconList {
+  &__Icons {
     display: flex;
+    align-items: center;
   }
   &__Icon {
-    margin-left: 15px;
     font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    i {
+      color: #f0f0f0;
+    }
     a {
-      color: white;
+      display: block;
+      height: 100%;
+      width: 100%;
     }
   }
-}
-
-.Close__icon {
-  color: #e5171f;
-  font-size: 25px;
+  &__Icon:hover {
+    background-color: #222;
+  }
 }
 
 .Content {
-  background-color: rgba(0,0,0,0.9);
   height: calc(100vh - 150px);
 }
 
-.Search {
-  height: 50px;
-  box-sizing: border-box;
-  padding: 0 15px 45px 0;
-  text-align: center;
-  position: relative;
-  &__bar {
-    color: rgba(0,0,0,0.5);
-    padding: 5px;
-    border-radius: 10px;
-    border-style: none;
+.Subjects {
+  height: 100%;
+  background-color: #333;
+  &__content {
+    height: 100%;
+    overflow: scroll;
   }
-  &__icon {
-    color: rgba(0,0,0,0.5);
-    position: absolute;
-    top: 10px;
-    right: 80px;
+  &__title {
+    box-sizing: border-box;
+    height: 75px;
+    width: 100%;
+    background-color: #333; 
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    line-height: 75px;
+    padding: 0 20px;
+    font-size: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__plus {
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    i {
+      color: #f0f0f0;
+    }
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__plus:hover {
+    background-color: #222;
   }
 }
 
-.Subjects {
-  height: calc(100vh - 200px);
-  overflow: scroll;
-  scrollbar-track-color: white;
-  padding: 0 20px;
+.CurrentSubject {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f0f0f0; 
+  border-right: 1px solid #333;
+  a {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+  }
 }
 
 .Subject { 
   box-sizing: border-box;
   width: 100%;
-  background-color: #ffffff;
-  margin: 30px 0; 
-  border-radius: 25px;
-  border: 6px solid #333;
-  padding: 20px;
+  background-color: #333; 
+  border-bottom: 1px solid #fff;
+  display: flex;
   a {
-    color:rgba(0,0,0,0.9);
+    height: 100%;
+    width: 100%;
+    color: #fff;
     text-decoration: none;
+    display: block;
+    padding: 15px 20px;
   }
 }
 
 .Subject:hover {
-  border: 6px solid #009944;
+  background-color: #222;
+  a {
+    color: #fff;
+  }
 }
 
 .Main {
@@ -105,44 +149,111 @@
 }
 
 .RightHeader {
-  height: 150px;
+  height: 75px;
+  width: 100%;
+  background-color: #333;
+  font-size: 20px;
+  line-height: 75px;
+  padding: 0 25px;
+  border-bottom: 1px solid #fff;
+  color: #fff;
   display: flex;
-  background-color: rgba(0,0,0,0.9);
-  padding: 30px 50px;
-  &__title {
+  justify-content: space-between;
+  align-items: center;
+  &__content {
     width: 100%;
-    background-color:#fff;
-    color: rgba(0,0,0,0.9);
-    font-family: "ぼくたちのゴシック";
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 90px;
-    text-align: center;
-    border-radius: 25px;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    display: flex;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__data {
+    font-size: 15px;
+    
+    &__for {
+      font-size: 15px;
+      color: #81d6c5;
+      margin-left: 15px;
+    }
+    &__against {
+      font-size: 15px;
+      color: #ed6d35;
+      margin-left: 15px;
+    }
+  }
+  &__ratio {
+    height: 25px;
+    width: 200px;
+    display: flex;
+    border-radius: 5px;
+    margin: 0 25px;
+  }
+  &__icons {
+    display: flex;
   }
   &__icon {
-    position: absolute;
-    top: 60px;
-    left: 380px;
-    z-index: 2;
     font-size: 20px;
-    border: 3px solid rgba(0,0,0,0.9);
-    border-radius: 8px;
-    padding: 0 8px;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    i {
+      color: #f0f0f0;
+    }
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__icon:hover {
+    background-color: #222;
   }
 }
 
+.For__ratio {
+  width: 50%;
+  height: 100%;
+  background-color: #81d6c5;
+  border-radius: 5px 0 0 5px;
+  font-size: 12px;
+  color: #000;
+  text-align: center;
+  line-height: 25px;
+}
+
+.Against__ratio {
+  width: 50%;
+  height: 100%;
+  background-color: #ed6d35;
+  border-radius: 0 5px 5px 0;
+  font-size: 12px;
+  color: #000;
+  text-align: center;
+  line-height: 25px;
+}
+
+.f-marker {
+  color: #81d6c5;
+  margin-right: 10px;
+}
+ 
+.a-marker {
+  color: #ed6d35;
+  margin-right: 10px;
+}
+
 .MessageField {
-  height: calc(100vh - 270px);
+  height: calc(100vh - 200px);
   width: 100%;
-  padding: 10px;
   overflow: scroll;
-  font-family: "ぼくたちのゴシック";
-  background-color: aliceblue;
-  background-image: url('debate.jpg');
-  background-size: cover;
+  background-color: #fff;
 }
 
 .MessageBox {
@@ -155,15 +266,17 @@
 .MessageFors {
   display: flex;
   margin-right: auto;
+  position: relative;
 }
 
 .MessageAgainsts {
   display: flex;
   margin-left: auto;
+  position: relative;
 }
 
 .MessageIcon-for {
-  margin-right: 10px;
+  margin-right: 30px;
   font-size: 3px;
   display: flex;
   flex-direction: column;
@@ -171,88 +284,168 @@
 }
 
 .MessageIcon-against {
-  margin-left: 10px;
+  margin-left: 30px;
   font-size: 3px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
+.f-triangle {
+  position: absolute;
+  left: 66px;
+  height: 25px;
+  width: 15px;
+  background-color: #81d6c5;
+  border-top: 1px solid #000;
+  .f-white {
+    height: 100%;
+    width: 15px;
+    border-radius: 0 25px 0 0;
+    background-color: white;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+}
+
+.a-triangle {
+  position: absolute;
+  right: 66px;
+  height: 25px;
+  width: 15px;
+  background-color: #ed6d35;
+  border-top: 1px solid #000;
+  .a-white {
+    height: 25px;
+    width: 15px;
+    border-radius: 25px 0 0 0;
+    background-color: #fff;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+}
+
 .MessageFor { 
-  align-items: center;
   margin-right: auto;
-  max-width: 49%;
-  background-color: #dbedff;
-  border-radius: 20px;
-  border: 5px solid #077385;
-  padding: 10px 15px;
-  display: inline-block;
+  max-width: 50%;
+  background-color: #81d6c5;
+  border-radius: 0 25px 25px 25px;
+  padding: 13px 15px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  margin-bottom: 15px;
+  border: 1px solid #000;
 }
 
 .MessageAgainst {
   margin-left: auto;
-  max-width: 49%;
-  background-color: #ffdbdb;
-  border-radius: 20px;
-  border: 5px solid #c2505c;
-  padding: 10px 15px;
-  display: inline-block;
-  text-align: left;
+  max-width: 50%;
+  background-color: #ed6d35;
+  border-radius: 25px 0 25px 25px;
+  padding: 13px 15px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  margin-bottom: 15px;
+  border: 1px solid #000;
 }
 
 .MessageNeutral {
-  border-radius: 20px;
-  background-color: #fff;
-  border: 5px solid #333;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
   padding: 10px 15px;
   margin: 0 150px;
-}
-
-.MessageText {
-  font-size: 16px;
-  display: inline;
-  white-space: pre-wrap;
+  margin-bottom: 15px;
 }
 
 .Footer {
-  height: 120px;
+  height: 125px;
   width: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: #fff;
 }
 
 .Form {
+  height: 100px;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 25px;
+  background-color: #fff;
   &__contents {
-    position: relative;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
   }
-  &__inputContent {
-    height: 60px;
+  &__input {
+    height: 49px;
     width: 100%;
-    border-radius: 15px;
-    padding: 10px 15px;  
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    resize: none; 
     overflow: scroll;
-    position: absolute;
-    top: 30px;
+    padding: 7px 0 0 7px;
+  }
+  &__content {
+    height: 49px;
+    border-top: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+    background-color: #f0f0f0;
+    align-items: center;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icons {
+    display: flex;
   }
   &__icon {
-    position: absolute;
-    top: 41px;
-    right: 100px;
-    font-size: 35px;
-    color: rgba(0,0,0,0.9);
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    i {
+      color: #333;
+    }
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
-  &__submit {
-    position: absolute;
-    width: 70px;
-    top: 40px;
-    right: 15px;
-    padding: 7px 15px;
-    color: white;
-    background-color: rgba(0,0,0,0.9);
-    border-radius: 10px;
-    border-style: none;
-    font-family: "ぼくたちのゴシック";
+  &__icon:hover {
+    background-color: #333;
+    i {
+      color: #f0f0f0;
+    }
+  }
+}
+
+.Send {
+  border-style: none;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  i {
+    color: #333;
+  }
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.Send:hover {
+  background-color: #333;
+  i {
+    color: #f0f0f0;
   }
 }
 
@@ -260,26 +453,14 @@
   display: none;
 }
 
-.Icon-imageFor {
+.Icon-image {
   height: 50px;
   width: 50px;
-  border: 3px solid #077385;
-  border-radius: 50px;
+  border: 1px solid #333;
+  border-radius: 5px;
   background-color: #fff;
 }
 
-.Icon-imageAgainst {
-  height: 50px;
-  width: 50px;
-  border: 3px solid #c2505c;
-  border-radius: 50px;
-  background-color: #fff;
-}
-
-.Icon-imageNeutral {
-  height: 50px;
-  width: 50px;
-  border: 3px solid #009944;
-  border-radius: 50px;
-  background-color: #fff;
+.Message__image {
+  border-radius: 5px;
 }

@@ -1,35 +1,38 @@
 .Side
-  .LeftHeader
-    .LeftHeader__List
+  .LeftHeader 
+    .LeftHeader__user
       -unless current_user.admin?
-        -if For.exists?(user_id: current_user.id, group_id: @group)
-          .LeftHeader__userIcon
-            %img{ src: current_user.image, class: "Icon-imageFor" }
-        - elsif Against.exists?(user_id: current_user.id, group_id: @group)
-          .LeftHeader__userIcon
-            %img{ src: current_user.image, class: "Icon-imageAgainst" }
-        - else
-          .LeftHeader__userIcon
-            %img{ src: current_user.image, class: "Icon-imageNeutral" }
-      %h3.LeftHeader__userName
-        = current_user.name
-      %ul.LeftHeader__iconList
-        - if current_user.admin?
-          %li.LeftHeader__Icon
-            = link_to new_group_path do
-              = icon('fas', 'plus', class: 'Close__icon')
+        .LeftHeader__userIcon
+          = image_tag current_user.image.url, class: "Icon-image" 
+        %h3.LeftHeader__userName
+          = current_user.name
+    %ul.LeftHeader__Icons
+      %li.LeftHeader__Icon
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'user-cog')
+      - if current_user.admin?
         %li.LeftHeader__Icon
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'user-cog')    
+          = link_to new_group_path do
+            = icon('fas', 'plus', class: 'Close__icon')  
   .Content
-    .Search
-      %input.Search__bar{type: 'text', placeholder: '検索'}
-        = icon('fas', 'search', class: 'Search__icon')
     .Subjects
-      - groups.each do |group|
-        .Subject
-          = link_to group_path(group) do
-            = group.name
-          
-            
+      .Subjects__title
+        論題
+        .Subjects__plus
+          = link_to new_group_path do
+            = icon('fas', 'plus')
+      .Subjects__content
+        - groups.each do |group|
+          - if group == @group
+            .CurrentSubject
+              = link_to group_path(group) do
+                ◎
+                = group.name
+          - else
+            .Subject
+              = link_to group_path(group) do
+                ◎
+                = group.name
       
+        
+        

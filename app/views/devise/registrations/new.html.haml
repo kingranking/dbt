@@ -1,13 +1,9 @@
 .AccountPage
-  .AccountPage__contents
-    .AccountPage__image
-    .AccountPage__title
-      %h2 ぼく偉いもん     
-      = render "devise/shared/links"
   .AccountPage__form
+    .AccountPage__title
+      %h3 新規アカウントの作成
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
-      %h3 新規アカウントの作成
       .FormField
         .FormField__label--normal
           = f.label :名前
@@ -35,4 +31,6 @@
         .FormField__input--normal
           = f.password_field :password_confirmation, autocomplete: "off"
       .actions
-        = f.submit "アカウント作成", class: 'Button UserButton'
+      .Button
+        = f.submit "アカウント作成", class: 'Button1'
+        = render "devise/shared/links"
