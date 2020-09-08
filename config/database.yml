@@ -51,6 +51,6 @@ production:
   <<: *default
   database: dbt_production
   username: root
-  password: <%= ENV['DBT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
   
