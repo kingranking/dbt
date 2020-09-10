@@ -5,7 +5,7 @@
 http://54.199.122.156:3000/ 
 
 #### テストIDPASS 
-<br>&emsp;メールアドレス: tarou@tarou
+&emsp;メールアドレス: tarou@tarou
 <br>&emsp; Pass: tarou123
 
 ## 概要
